@@ -1,0 +1,26 @@
+import random
+def choose():
+    dict=['cat','rat','pan','hat','car']
+    word=random.choice(dict)
+    return word
+player=input("Enter your name: ")
+print("")
+n=int(1)
+point=0
+while (n==1):
+    pick=choose()
+    mix=''.join(random.sample(pick,len(pick)))
+    print("")
+    print("Identify word=",mix)
+    guess=input("")
+    if guess==pick:
+        print("")
+        print("Congratulation,your guess is correct")
+        point=point+10
+    else:
+        print("")
+        print("Good luck next time")
+        point=point-10
+    n=int(input('''Do you want to continue(press 1)\n if not(press any else key)'''))
+    print(" ")
+print("Your Score=",point)
